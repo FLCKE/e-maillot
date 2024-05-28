@@ -1,0 +1,104 @@
+Charte de projet;;;;;;;;;;;;
+;;;;;;;;;;;;
+Nom du projet;;;;;;;;;;;;
+E-Maillot;;;;;;;;;;;;
+Chef de projet;;;;;;;;;;;;
+Francisco Louis-Carlos Esse Kennet;;;;;;;;;;;;
+Equipe;;;;;;;;;;;;
+Francisco Louis-Carlos Esse Kennet;;;;;;;;;;;;
+Mounirou wahab;;;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+But;Contexte;;;;;;;;;;;
+"Que cherche-t-on à accomplire? Quelle motivation?:   
+ Il s'agit de la réalisation d'un site E-commerce de ventes de maillots avec les fonctionnalités suivantes :
+    
+.Côté Administrateur: 
+-Dashboard pour les opérations CRUDS(produits,utilisateurs)
+-Page de connexion
+ 
+
+.Côté clients:
+-Authentification
+-Page de connexion
+-Page d'inscription
+-Catalogue de produit
+-Panier
+-Historique de commande
+-Système de paiement 
+
+Infrastructure:
+-hébergement du site grâce a docker 
+-Gestion des accès 
+-Mise en place d'un serveur web et d'un serveur de base de donnée
+
+
+";"Quel est le contexte du projet? Comment il s'inscrit dans le reste de vos programmes, parcours?: 
+Ce projet intervient dans le cadre la mise applications et en communs  des compétences globales acquises au cours de l'année d'une part d'un point de vue d'infrastucture réseaux et d'autre part d'un point de vue de de développement .Ce Projet nous aident a acquérir des compétence dans les frameworks (angular , node et express,js) et dans l'environnement d'execution docker,";;;;;;;;;;;
+;;;;;;;;;;;;
+Périmètre;Critères de succès;;;;;;;;;;;
+"Dans le périmètre
+Qu'est ce qui est dans le périmètre du projet?
+-La maquette du site 
+-Le schéma UML
+-API mettant en relation le backend et notre base donnée
+-Le serveur web 
+-le serveur Base de donnée
+-l'integration d'un systeme de paiement 
+-le code complet du site
+-la documentation technique  
+
+Hors du périmètre
+Qu'est ce qui en sort, qu'est ce qui n'en fait pas partie?
+-le systeme de mail
+-un systeme de suivi de produit
+
+
+
+
+
+""";"Comment déterminer si le projet est réussi? Quels sont les critères de performance?
+-Avoir un site qui fonctionne qui ne bug pas 
+-Héberger le site sur la vm avec Docker
+-Avoir un site fluide avec un design attraignant
+-Expérience utilisateur soignée
+-Avoir un processus d'achat fluide
+-Sécuriser la navigation";;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+Rôles;Responsabilités;;;;;;;;;;;
+"Quels sont les rôles au sein du projet?
+Chef de projet:FRANCISCO Louis-Carlos 
+Rélisateur : 
+         -MOUNIROU Wahab
+         -FRANCISCO Louis-Carlos";"Quel activité relève de la responsabilité de chaque rôle?
+Chef de projet:
+-Suivi de projet
+Réalisateur:
+-Mise en place d'une maquette :FRANCISCO Louis-Carlos
+-Mise en place du schéma UML : MOUNIROU Wahab
+-Mise en place de la base de donnée: FRANCISCO Louis-Carlos
+-Devoloppement font-end:Mounirou Wahab
+-Developpement Back-end: FRANCISCO Louis-Carlos
+-Mise en place de l'API : FRANCISCO Louis-Carlos
+-Mise en place de la vm et des conteneur Docker : MOUNIROU Wahab
+-Mise en place du serveur web et du serveur de base de donnée: MOUNIROU Wahab
+-Mise en place du DNS et du DHCP:FRANCISCO Louis-Carlos
+-Mise en place du pare-feu : MOUNIROU Wahab 
+-Mise en place d'un systeme de gestion d'accès : FRANCISCO Louis-Carlos
+-Hébergement du site :FRANCISCO Louis-Carlos && MOUNIROU Wahab
+
+
+
+
+
+";;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+Dates et lieu(x) de déroulement;;;;;;;;;;;;
+18/05/2024 A YNOV CAMPUS;;;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
+;;;;;;;;;;;;
