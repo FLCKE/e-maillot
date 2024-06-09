@@ -1,0 +1,15 @@
+{
+  "name": "user-service",
+  "version": "1.0.0",
+  "description": "A simple Node.js app",
+  "main": "userapp.js",
+  "type": "module",   
+  "scripts": {
+    "start": "node userapp.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
+
