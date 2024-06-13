@@ -1,0 +1,156 @@
+<section>
+    <header>
+        <div class=" text-center text-white"
+            style="background: rgb(2,0,36);background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+            <span class="fs-3">Livraison sur 14 jours ouvrés</span>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-light  " style="background:url(../../assets/img_principal.jpg) 50% 50%;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="">E-maillot</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav text-center me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active  text-white fw-bold" aria-current="page"
+                                [routerLink]="['/home']">Acceuil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white fw-bold" [routerLink]="['/catalogue']">Nos produits</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white fw-bold" [routerLink]="['/command']">Commande</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white fw-bold" [routerLink]="['/home', 'contact']" fragment="contact">Contactez-nous</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <a [routerLink]="['/cart']" class="text-decoration-none mx-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
+                        </a>
+                        <a [routerLink]="['/profil']" class="text-decoration-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class=" row m-5">
+        <div class="col-3  shadow w-25 text-center p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor"
+                class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+
+        </div>
+        <div class="col">
+            <div class=" w-75 p-5 m-auto shadow " *ngIf="userData">
+                <div class="d-flex fs-5 justify-content-between ">
+                    <div class=" d-flex ">
+                        <h4 class="me-2">Firstname :</h4>
+                        <span> {{userData.firstname}} </span>
+                    </div>
+                    <div class="d-flex">
+                        <h4 class="me-2">Lastname :</h4>
+                        <span> {{userData.lastname}} </span>
+                    </div>
+                    <!-- <div class="d-flex fs-5 "> -->
+                </div>
+                <div class="d-flex fs-5 justify-content-between my-3 ">
+                    <div class="d-flex ">
+                        <h4 class="me-2">Email :</h4>
+                        <span> {{userData.user_email}} </span>
+                    </div>
+                    <div class="d-flex ">
+                        <h4 class="me-2">Username :</h4>
+                        <span> {{userData.user_name}} </span>
+                    </div>
+                    <!-- <div class="d-flex fs-5 "> -->
+                </div>
+
+                <div class="text-center mt-4 pt-2">
+                    <button type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Modifier
+                    </button>
+                </div>
+                <!-- Button trigger modal -->
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modification du profil</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                                <form action="" method="post">
+                                    <div class="d-flex fs-5 justify-content-between my-2">
+                                        <div class=" d-flex mx-5">
+                                            <label for="username">Username:</label>
+                                            <input type="text" id="username" value="{{userData.user_name}}" required>
+
+                                        </div>
+                                        <div class="d-flex mx-4">
+                                            <label for="email">Email:</label>
+                                            <input type="email" id="email" value="{{userData.user_email}}" required>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex fs-5 justify-content-between px-5 my-5">
+                                        <div class=" d-flex ">
+                                            <label for="firstname" class=" me-4">First Name:</label>
+                                            <input type="text" class="ms-2" id="firstname"
+                                                value="{{userData.firstname}}" required>
+
+                                        </div>
+                                        <div class="d-flex mx-5">
+                                            <label for="lastname" class=" me-4">Last Name:</label>
+                                            <input type="text" class="ms-2" id="lastname" value="{{userData.lastname}}"
+                                                required>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="text-center">
+                                        <button type="submit" (click)="updateUser()"
+                                            class="btn btn-primary w-75 my-3">Update User</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center my-5">
+        <a (click)="logout()" class="btn btn-danger"> Déconnexion</a>
+    </div>
+    <footer>
+        <div class=" text-center text-white"
+            style="background: rgb(2,0,36);background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+            <span class="fs-5">E-maillot - 2024</span>
+        </div>
+    </footer>
+
+</section>

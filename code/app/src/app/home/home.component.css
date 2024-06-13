@@ -1,0 +1,156 @@
+.banniere {
+    background: url("../../assets/img_principal.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+nav {
+    background-color: transparent;
+    /* background-color: #555; */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.emaiillot {
+    float: left;
+}
+
+.cart,
+.user {
+    float: right;
+    margin-left: 10px;
+}
+
+.custom-search-container {
+    background-color: blurred;
+    height: 150px;
+}
+
+
+form {
+    background-color: white;
+}
+
+.custom-search-button {
+    background-color: rgb(67, 11, 196);
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.custom-search-container {
+    transform: translateY(50px);
+
+    position: relative;
+    z-index: 0;
+    /* Assurez-vous que la boîte de recherche est placée au-dessus de l'arrière-plan flou */
+    padding: 20px;
+    /* Ajoutez un espace à l'intérieur de la boîte de recherche */
+    border-radius: 10px;
+    /* Arrondir les coins de la boîte de recherche */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(2px);
+    width: 800px;
+    height: 100px;
+
+
+}
+
+.custom-search-button:hover {
+    background-color: rgb(67, 11, 196);
+    transition: 0.5s;
+}
+
+
+
+.custom-bg-light-purple {
+    background-color: #c9a4ff;
+    /* Définissez votre couleur violette claire personnalisée */
+}
+
+.main a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-custom-primary {
+    background-color: rgb(67, 11, 196);
+    color: white;
+    /* border-color: #6c757d; */
+}
+
+.btn-custom-secondary {
+    color: rgb(67, 11, 196);
+    background-color: white;
+    /* border-color: #6c757d; */
+}
+
+
+
+.btn-secondary {
+    background-color: rgb(67, 11, 196);
+
+}
+
+.dropdown-item {
+    background-color: white;
+}
+
+
+.dropdown-item:hover {
+    background-color: rgb(67, 11, 196);
+    transition: 0.5s;
+}
+
+/* footer {
+    background-color: rgb(67, 11, 196);
+   
+    color: white;
+    
+    padding: 20px;
+    
+    text-align: center;
+
+} */
+
+.footer-content {
+    max-width: 1200px;
+    /* Largeur maximale du contenu du footer */
+    margin: 0 auto;
+    /* Centrer le contenu du footer */
+}

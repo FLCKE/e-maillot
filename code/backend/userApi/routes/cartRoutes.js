@@ -4,15 +4,15 @@ const db = require('../dbConnexion');
 
 // Route pour ajouter un produit au panier
 router.post('/', (req, res) => {
-    const { userId, productId } = req.body;
-    const query = 'INSERT INTO cart (userId, productId) VALUES (?, ?)';
-    db.query(query, [userId, productId], (err, results) => {
+    const { userId, productId, quantity } = req.body;
+    const query = 'INSERT INTO cart (userId, productId,quantity) VALUES (?, ?,?)';
+    db.query(query, [userId, productId, quantity], (err, results) => {
         if (err) {
             console.error('Error adding product to cart:', err);
             res.status(500).send('Error adding product to cart');
             return;
         }
-        res.status(201).json({ cartId: results.insertId, userId, productId });
+        res.status(201).json({ cartId: results.insertId, userId, productId, quantity });
     });
 });
 
@@ -58,7 +58,7 @@ router.delete('/clear/:userId', (req, res) => {
             res.status(500).send('Error clearing cart');
             return;
         }
-        res.status(204).send();
+        res.status(204).send("Article delete");
     });
 });
 

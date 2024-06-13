@@ -29,10 +29,10 @@ router.get('/', (req, res) => {
     });
 });
 // Route pour récupérer toutes les commandes d'un utilisateur
-router.get('/:userid', (req, res) => {
-    const {userId}=req.params;
-    const query = 'SELECT * FROM command Where userId=?';
-    db.query(query,[userId], (err, results) => {
+router.get('/:userId', (req, res) => {
+    const { userId } = req.params;
+    const query = 'SELECT * FROM command WHERE userId=?';
+    db.query(query, [userId], (err, results) => {
         if (err) {
             console.error('Error fetching commands:', err);
             res.status(500).send('Error fetching commands');
