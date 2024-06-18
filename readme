@@ -1,0 +1,51 @@
+Explication
+Répertoires/fichiers de niveau supérieur :
+
+.angular/ : Configuration et fichiers liés à Angular CLI.
+.vscode/ : Paramètres et configurations spécifiques à VSCode.
+node_modules/ : Répertoire contenant tous les packages npm requis par le projet.
+src/ : Répertoire source où se trouve le code principal de l'application.
+À l'intérieur du répertoire src/app/ :
+
+Répertoires :
+
+api/ : Contient probablement des fichiers liés aux interactions avec l'API.
+api_product/ : Contient probablement des fichiers liés aux interactions spécifiques à l'API des produits.
+cart/ : Contient probablement des fichiers liés à la fonctionnalité du panier d'achat.
+catalogue/ : Contient probablement des fichiers liés aux catalogues de produits.
+command/ : Peut contenir des fichiers liés aux modèles de commandes ou aux commandes CLI.
+home/ : Contient des fichiers pour le composant de la page d'accueil.
+login/ : Contient des fichiers pour la fonctionnalité de connexion.
+model/ : Contient probablement des fichiers de modèles ou de structures de données.
+product/ : Contient des fichiers liés aux composants ou services de produits.
+profil/ : Contient des fichiers liés à la fonctionnalité de profil utilisateur.
+subscribe/ : Contient des fichiers liés à la fonctionnalité d'abonnement.
+Fichiers :
+
+app-routing.module.ts : Fichier du module de routage Angular, où les configurations de routes sont définies.
+app.component.html : Modèle HTML pour le composant principal de l'application.
+app.component.scss : Feuille de style pour le composant principal de l'application.
+app.component.ts : Fichier TypeScript pour le composant principal de l'application, contenant la logique et les liaisons de données.
+app.module.ts : Fichier principal du module de l'application où différents modules et composants sont déclarés et importés.
+Notes supplémentaires
+Le répertoire .vscode/ contient généralement des fichiers de configuration spécifiques à l'environnement Visual Studio Code, tels que les paramètres, les extensions et les configurations de lancement.
+Le répertoire .angular/ est utilisé par Angular CLI pour stocker les fichiers de configuration spécifiques à l'espace de travail, comme angular.json, et d'autres fichiers connexes.
+Le répertoire node_modules/ est généré par npm (Node Package Manager) et contient toutes les dépendances spécifiées dans le fichier package.json.
+
+
+-prérequis
+
+
+Ce projet est une application Angular containerisée à l'aide de Docker. Il utilise une configuration en deux étapes pour construire l'application Angular avec Node.js et la servir avec Nginx.
+
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- [Docker](https://www.docker.com/get-started)
+- [Node.js](https://nodejs.org/) (si vous souhaitez développer ou tester localement sans Docker)
+- [Angular CLI](https://angular.io/cli) (optionnel, pour le développement local)
+
+## Installation
+
+Clonez ce dépôt sur votre machine locale :
