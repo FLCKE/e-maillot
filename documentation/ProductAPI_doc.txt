@@ -1,0 +1,304 @@
+Voici une documentation détaillée de l'API basée sur le code fourni :
+
+## API Catégories
+
+### Ajouter une nouvelle catégorie
+
+- **Endpoint** : `POST /api/category`
+- **Description** : Ajoute une nouvelle catégorie.
+- **Corps de la requête** :
+  ```json
+  {
+    "categoryName": "Nom de la catégorie"
+  }
+  ```
+- **Réponse réussie** : `201 Created`
+  ```json
+  {
+    "categoryId": 1,
+    "categoryName": "Nom de la catégorie"
+  }
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer toutes les catégories
+
+- **Endpoint** : `GET /api/category`
+- **Description** : Récupère la liste de toutes les catégories.
+- **Réponse réussie** : `200 OK`
+  ```json
+  [
+    {
+      "categoryId": 1,
+      "categoryName": "Catégorie 1"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Catégorie 2"
+    }
+  ]
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer une catégorie spécifique
+
+- **Endpoint** : `GET /api/category/:categoryId`
+- **Description** : Récupère les détails d'une catégorie spécifique.
+- **Paramètres** :
+  - `categoryId` (obligatoire) : Identifiant unique de la catégorie.
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "categoryId": 1,
+    "categoryName": "Catégorie 1"
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Catégorie non trouvée.
+  - `500 Internal Server Error`
+
+### Mettre à jour une catégorie
+
+- **Endpoint** : `PUT /api/category/:categoryId`
+- **Description** : Met à jour les informations d'une catégorie existante.
+- **Paramètres** :
+  - `categoryId` (obligatoire) : Identifiant unique de la catégorie.
+- **Corps de la requête** :
+  ```json
+  {
+    "categoryName": "Nouveau nom de la catégorie"
+  }
+  ```
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "categoryId": 1,
+    "categoryName": "Nouveau nom de la catégorie"
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Catégorie non trouvée.
+  - `500 Internal Server Error`
+
+### Supprimer une catégorie
+
+- **Endpoint** : `DELETE /api/category/:categoryId`
+- **Description** : Supprime une catégorie existante.
+- **Paramètres** :
+  - `categoryId` (obligatoire) : Identifiant unique de la catégorie.
+- **Réponse réussie** : `204 No Content`
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Catégorie non trouvée.
+  - `500 Internal Server Error`
+
+## API Photos
+
+### Ajouter une nouvelle photo
+
+- **Endpoint** : `POST /api/photo`
+- **Description** : Ajoute une nouvelle photo pour un produit.
+- **Corps de la requête** :
+  ```json
+  {
+    "productId": 1,
+    "photoUrl": "https://example.com/photo.jpg"
+  }
+  ```
+- **Réponse réussie** : `201 Created`
+  ```json
+  {
+    "photoId": 1,
+    "productId": 1,
+    "photoUrl": "https://example.com/photo.jpg"
+  }
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer toutes les photos d'un produit
+
+- **Endpoint** : `GET /api/photo/product/:productId`
+- **Description** : Récupère la liste de toutes les photos d'un produit spécifique.
+- **Paramètres** :
+  - `productId` (obligatoire) : Identifiant unique du produit.
+- **Réponse réussie** : `200 OK`
+  ```json
+  [
+    {
+      "photoId": 1,
+      "productId": 1,
+      "photoUrl": "https://example.com/photo1.jpg"
+    },
+    {
+      "photoId": 2,
+      "productId": 1,
+      "photoUrl": "https://example.com/photo2.jpg"
+    }
+  ]
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer une photo spécifique
+
+- **Endpoint** : `GET /api/photo/:photoId`
+- **Description** : Récupère les détails d'une photo spécifique.
+- **Paramètres** :
+  - `photoId` (obligatoire) : Identifiant unique de la photo.
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "photoId": 1,
+    "productId": 1,
+    "photoUrl": "https://example.com/photo.jpg"
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Photo non trouvée.
+  - `500 Internal Server Error`
+
+### Mettre à jour une photo
+
+- **Endpoint** : `PUT /api/photo/:photoId`
+- **Description** : Met à jour l'URL d'une photo existante.
+- **Paramètres** :
+  - `photoId` (obligatoire) : Identifiant unique de la photo.
+- **Corps de la requête** :
+  ```json
+  {
+    "photoUrl": "https://example.com/nouvelle-photo.jpg"
+  }
+  ```
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "photoId": 1,
+    "photoUrl": "https://example.com/nouvelle-photo.jpg"
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Photo non trouvée.
+  - `500 Internal Server Error`
+
+### Supprimer une photo
+
+- **Endpoint** : `DELETE /api/photo/:photoId`
+- **Description** : Supprime une photo existante.
+- **Paramètres** :
+  - `photoId` (obligatoire) : Identifiant unique de la photo.
+- **Réponse réussie** : `204 No Content`
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Photo non trouvée.
+  - `500 Internal Server Error`
+
+## API Produits
+
+### Ajouter un nouveau produit
+
+- **Endpoint** : `POST /api/products`
+- **Description** : Ajoute un nouveau produit.
+- **Corps de la requête** :
+  ```json
+  {
+    "productName": "Nom du produit",
+    "Price": 19.99,
+    "remainInStocks": 100,
+    "categoryId": 1
+  }
+  ```
+- **Réponse réussie** : `201 Created`
+  ```json
+  {
+    "productId": 1,
+    "productName": "Nom du produit",
+    "Price": 19.99,
+    "remainInStocks": 100,
+    "categoryId": 1
+  }
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer tous les produits
+
+- **Endpoint** : `GET /api/products`
+- **Description** : Récupère la liste de tous les produits.
+- **Réponse réussie** : `200 OK`
+  ```json
+  [
+    {
+      "productId": 1,
+      "productName": "Produit 1",
+      "Price": 19.99,
+      "remainInStocks": 100,
+      "categoryId": 1
+    },
+    {
+      "productId": 2,
+      "productName": "Produit 2",
+      "Price": 29.99,
+      "remainInStocks": 50,
+      "categoryId": 2
+    }
+  ]
+  ```
+- **Réponse en cas d'erreur** : `500 Internal Server Error`
+
+### Récupérer un produit spécifique
+
+- **Endpoint** : `GET /api/products/:productId`
+- **Description** : Récupère les détails d'un produit spécifique.
+- **Paramètres** :
+  - `productId` (obligatoire) : Identifiant unique du produit.
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "productId": 1,
+    "productName": "Produit 1",
+    "Price": 19.99,
+    "remainInStocks": 100,
+    "categoryId": 1
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Produit non trouvé.
+  - `500 Internal Server Error`
+
+### Mettre à jour un produit
+
+- **Endpoint** : `PUT /api/products/:productId`
+- **Description** : Met à jour les informations d'un produit existant.
+- **Paramètres** :
+  - `productId` (obligatoire) : Identifiant unique du produit.
+- **Corps de la requête** :
+  ```json
+  {
+    "productName": "Nouveau nom du produit",
+    "Price": 24.99,
+    "remainInStocks": 75,
+    "categoryId": 2
+  }
+  ```
+- **Réponse réussie** : `200 OK`
+  ```json
+  {
+    "productId": 1,
+    "productName": "Nouveau nom du produit",
+    "Price": 24.99,
+    "remainInStocks": 75,
+    "categoryId": 2
+  }
+  ```
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Produit non trouvé.
+  - `500 Internal Server Error`
+
+### Supprimer un produit
+
+- **Endpoint** : `DELETE /api/products/:productId`
+- **Description** : Supprime un produit existant.
+- **Paramètres** :
+  - `productId` (obligatoire) : Identifiant unique du produit.
+- **Réponse réussie** : `204 No Content`
+- **Réponses en cas d'erreur** :
+  - `404 Not Found` : Produit non trouvé.
+  - `500 Internal Server Error`
+
+Cette documentation couvre les endpoints, les paramètres, les corps de requête, les réponses et les descriptions pour les API Catégories, Photos et Produits.

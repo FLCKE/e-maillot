@@ -1,0 +1,191 @@
+## Documentation de l'API
+
+### Introduction
+Cette documentation décrit les différents endpoints de l'API ainsi que leur utilisation. L'API permet de gérer des utilisateurs, des adresses, des paniers, des commandes et des photos.
+
+### Table des matières
+1. [Configuration de l'application](#configuration-de-lapplication)
+2. [Endpoints Utilisateurs](#endpoints-utilisateurs)
+3. [Endpoints Adresses](#endpoints-adresses)
+4. [Endpoints Panier](#endpoints-panier)
+5. [Endpoints Commandes](#endpoints-commandes)
+6. [Endpoints Photos](#endpoints-photos)
+
+### Configuration de l'application
+
+```javascript
+const express = require('express');
+const cors = require('cors');
+const bodyparser = require('body-parser');
+
+const usersRouter = require('./routes/userRoutes');
+const addressRouter = require('./routes/addressRoute');
+const cartRouter = require('./routes/cartRoutes');
+const commandRouter = require('./routes/commandRoutes');
+const photoRouter = require('./routes/photoRoutes');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(bodyparser.json());
+
+app.use('/api/users', usersRouter);
+app.use('/api/address', addressRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/command', commandRouter);
+app.use('/api/photo', photoRouter);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port localhost:${PORT}`);
+});
+```
+
+### Endpoints Utilisateurs
+
+#### POST `/api/users`
+- Description : Crée un nouvel utilisateur.
+- Corps de la requête : `{ username, lastname, firstname, email, password, registrationDate, role }`
+- Réponse : `{ userid, username, lastname, firstname, email, password, registrationDate, role }`
+
+#### GET `/api/users`
+- Description : Récupère tous les utilisateurs.
+- Réponse : Tableau d'utilisateurs.
+
+#### GET `/api/users/login`
+- Description : Connecte un utilisateur.
+- Paramètres de requête : `email`, `password`
+- Réponse : `{ message, data }`
+
+#### GET `/api/users/:userid`
+- Description : Récupère un utilisateur spécifique par ID.
+- Paramètres : `userid`
+- Réponse : Utilisateur correspondant.
+
+#### PUT `/api/users/:userid`
+- Description : Met à jour un utilisateur spécifique.
+- Paramètres : `userid`
+- Corps de la requête : `{ username, lastname, firstname, email }`
+- Réponse : Utilisateur mis à jour.
+
+#### DELETE `/api/users/:userid`
+- Description : Supprime un utilisateur spécifique.
+- Paramètres : `userid`
+- Réponse : `204 No Content`
+
+### Endpoints Adresses
+
+#### POST `/api/address`
+- Description : Crée une nouvelle adresse.
+- Corps de la requête : `{ userId, City, Country, streetName, streetNumber, phoneNumber }`
+- Réponse : `{ addId, userId, City, Country, streetName, streetNumber, phoneNumber }`
+
+#### GET `/api/address`
+- Description : Récupère toutes les adresses.
+- Réponse : Tableau d'adresses.
+
+#### GET `/api/address/:userId`
+- Description : Récupère une adresse spécifique par ID d'utilisateur.
+- Paramètres : `userId`
+- Réponse : Adresse correspondante.
+
+#### PUT `/api/address/:userId`
+- Description : Met à jour une adresse spécifique.
+- Paramètres : `userId`
+- Corps de la requête : `{ City, Country, streetName, streetNumber, phoneNumber }`
+- Réponse : Adresse mise à jour.
+
+#### DELETE `/api/address/:userId`
+- Description : Supprime une adresse spécifique.
+- Paramètres : `userId`
+- Réponse : `204 No Content`
+
+### Endpoints Panier
+
+#### POST `/api/cart`
+- Description : Ajoute un produit au panier.
+- Corps de la requête : `{ userId, productId, quantity }`
+- Réponse : `{ cartId, userId, productId, quantity }`
+
+#### GET `/api/cart/:userId`
+- Description : Récupère tous les produits du panier d'un utilisateur.
+- Paramètres : `userId`
+- Réponse : Tableau de produits dans le panier.
+
+#### DELETE `/api/cart/:cartId`
+- Description : Supprime un produit spécifique du panier.
+- Paramètres : `cartId`
+- Réponse : `204 No Content`
+
+#### DELETE `/api/cart/clear/:userId`
+- Description : Supprime tous les articles du panier d'un utilisateur.
+- Paramètres : `userId`
+- Réponse : `204 No Content`
+
+### Endpoints Commandes
+
+#### POST `/api/command`
+- Description : Crée une nouvelle commande.
+- Corps de la requête : `{ userId, productId, deliveryDate, countOfProdInCom }`
+- Réponse : `{ commandId, userId, productId, deliveryDate, countOfProdInCom }`
+
+#### GET `/api/command`
+- Description : Récupère toutes les commandes.
+- Réponse : Tableau de commandes.
+
+#### GET `/api/command/:userId`
+- Description : Récupère toutes les commandes d'un utilisateur spécifique.
+- Paramètres : `userId`
+- Réponse : Tableau de commandes.
+
+#### GET `/api/command/:commandId`
+- Description : Récupère une commande spécifique par ID.
+- Paramètres : `commandId`
+- Réponse : Commande correspondante.
+
+#### PUT `/api/command/:commandId`
+- Description : Met à jour une commande spécifique.
+- Paramètres : `commandId`
+- Corps de la requête : `{ userId, productId, deliveryDate, countOfProdInCom }`
+- Réponse : Commande mise à jour.
+
+#### DELETE `/api/command/:commandId`
+- Description : Supprime une commande spécifique.
+- Paramètres : `commandId`
+- Réponse : `204 No Content`
+
+### Endpoints Photos
+
+#### POST `/api/photo`
+- Description : Ajoute une nouvelle photo.
+- Corps de la requête : `{ userId, photoUrl }`
+- Réponse : `{ photoId, userId, photoUrl }`
+
+#### GET `/api/photo/:userId`
+- Description : Récupère toutes les photos d'un utilisateur.
+- Paramètres : `userId`
+- Réponse : Tableau de photos.
+
+#### GET `/api/photo/:photoId`
+- Description : Récupère une photo spécifique par ID.
+- Paramètres : `photoId`
+- Réponse : Photo correspondante.
+
+#### PUT `/api/photo/:userId`
+- Description : Met à jour une photo spécifique.
+- Paramètres : `userId`
+- Corps de la requête : `{ photoUrl }`
+- Réponse : Photo mise à jour.
+
+#### DELETE `/api/photo/:userId`
+- Description : Supprime une photo spécifique.
+- Paramètres : `userId`
+- Réponse : `204 No Content`
+
+---
+
+### Notes Techniques
+- Toutes les réponses en cas de succès suivent le format JSON.
+- Les erreurs retournent un statut HTTP approprié avec un message descriptif.
+- Les données sensibles, comme les mots de passe, sont hachées avant d'être stockées dans la base de données.
